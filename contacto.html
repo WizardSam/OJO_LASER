@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Contacta con Ojo Láser. Cuéntanos tu idea para un proyecto de corte o grabado láser.">
+        <meta name="theme-color" content="#141414">
+        <link rel="icon" type="image/png" href="assets/logo-ojo-laser.png">
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Contacto | Ojo Láser</title>
+    </head>
+    <body>
+        <a class="skip" href="#contenido">Saltar al contenido</a>
+        <header>
+            <a class="logo" href="index.html" aria-label="Ojo Láser, inicio">
+                <img src="assets/logo-ojo-laser.png" width="150" height="150" alt="Ojo Láser · Cortado y grabado láser">
+            </a>
+            <nav aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="menu.html">Productos</a>
+                <a href="contacto.html" aria-current="page">Contacto</a>
+            </nav>
+            <a class="header-contact" href="contacto.html">Hablemos <span aria-hidden="true">↗</span></a>
+        </header>
+        <main id="contenido">
+            <section class="page-heading">
+                <p class="eyebrow">02 / CONTACTO</p>
+                <h1>Todo empieza<br>con una <em>idea.</em></h1>
+                <p>Cuéntanos la tuya. Completa tus datos y los detalles de tu proyecto en nuestro formulario de contacto.</p>
+            </section>
+            <section class="contact-grid">
+                <form class="contact-form" aria-labelledby="form-title" aria-describedby="form-note">
+                    <span class="eyebrow">HABLEMOS DE TU PROYECTO</span>
+                    <h2 id="form-title">Déjanos tus datos.</h2>
+                    <p class="form-intro">Los campos con * son obligatorios.</p>
+                    <div class="form-fields">
+                        <div class="form-field">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre y apellido" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="correo">Correo electrónico *</label>
+                            <input type="email" id="correo" name="correo" autocomplete="email" placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="telefono">Teléfono (opcional)</label>
+                            <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="Tu número de contacto">
+                        </div>
+                        <div class="form-field">
+                            <label for="servicio">¿Qué necesitas? *</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="corte">Corte láser</option>
+                                <option value="corte-arquitectura">Corte láser para arquitectura (máx. 40 cm × 40 cm por pieza)</option>
+                                <option value="grabado">Grabado láser</option>
+                                <option value="corte-y-grabado">Corte y grabado láser</option>
+                                <option value="consulta">Otra consulta</option>
+                            </select>
+                        </div>
+                        <div class="form-field form-field--full">
+                            <label for="mensaje">Cuéntanos tu idea *</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tu proyecto: material, medidas, cantidad y fecha en la que lo necesitas." required></textarea>
+                        </div>
+                    </div>
+                    <p class="form-note" id="form-note">El envío estará disponible próximamente. Por ahora, puedes contactarnos por WhatsApp o Instagram.</p>
+                    <!-- Habilitar el botón cuando se conecte el formulario a un servicio de envío. -->
+                    <button class="button" type="submit" disabled>Enviar mensaje <span aria-hidden="true">↗</span></button>
+                </form>
+                <div class="contact-info">
+                    <div>
+                        <span class="eyebrow">CONTACTO DIRECTO</span>
+                        <h2>Sigamos la conversación</h2>
+                        <p>También puedes escribirnos para resolver tus dudas y consultar tu proyecto.</p>
+                        <div class="contact-channels">
+                            <a class="contact-channel" href="https://wa.me/526142204418" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/icons/whatsapp.png" width="36" height="36" alt="">
+                                <span><strong>WhatsApp</strong><span>+52 614 220 4418</span></span>
+                                <span class="contact-channel-arrow" aria-hidden="true">↗</span>
+                            </a>
+                            <a class="contact-channel" href="https://www.instagram.com/ojo_laser/" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/icons/instagram.png" width="36" height="36" alt="">
+                                <span><strong>Instagram</strong><span>@ojo_laser</span></span>
+                                <span class="contact-channel-arrow" aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="eyebrow">PEDIDOS</span>
+                        <h2>De lunes a sábado</h2>
+                        <p>Recibimos pedidos por WhatsApp y mensaje directo en Instagram.</p>
+                    </div>
+                    <div>
+                        <span class="eyebrow">ENTREGAS</span>
+                        <h2>A la semana siguiente</h2>
+                        <p>Confirma la fecha de entrega de tu proyecto al realizar el pedido.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <a class="logo" href="index.html">
+                <img src="assets/logo-ojo-laser.png" width="150" height="150" alt="Ojo Láser · Cortado y grabado láser">
+            </a>
+            <p>Cortes y grabados con láser.</p>
+            <a href="index.html#preguntas-frecuentes">Preguntas frecuentes</a>
+            <div class="footer-socials" aria-label="Redes sociales y contacto">
+                <a class="footer-social footer-social--instagram" href="https://www.instagram.com/ojo_laser/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons/instagram.png" width="28" height="28" alt="">
+                    <span>Instagram</span>
+                </a>
+                <a class="footer-social footer-social--whatsapp" href="https://wa.me/526142204418" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons/whatsapp.png" width="28" height="28" alt="">
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
