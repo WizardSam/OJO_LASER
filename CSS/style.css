@@ -228,6 +228,80 @@ p {
     max-width: 610px;
 }
 
+/* Vista ampliada de productos */
+.producto-abrir {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: #fff;
+    cursor: zoom-in;
+}
+
+#catalogo-productos .catalog-card {
+    cursor: zoom-in;
+}
+
+.producto-abrir:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: -3px;
+}
+
+.producto-modal-abierto {
+    overflow: hidden;
+}
+
+.producto-modal {
+    width: min(760px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    padding: 52px 20px 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    color: var(--text);
+    overflow: auto;
+}
+
+.producto-modal::backdrop {
+    background: rgb(0 0 0 / 80%);
+}
+
+.producto-modal img {
+    display: block;
+    width: 100%;
+    height: min(65dvh, 600px);
+    object-fit: contain;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.producto-modal h2 {
+    margin: 18px 0 0;
+    font-size: clamp(22px, 4vw, 30px);
+}
+
+.producto-modal-cerrar {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.producto-modal-cerrar:hover {
+    background: var(--line);
+}
+
+.producto-modal-cerrar:focus-visible {
+    outline: 2px solid var(--accent);
+}
+
 /* Galerías del menú */
 .catalog {
     padding: 0 6% 60px;

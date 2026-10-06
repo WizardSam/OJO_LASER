@@ -1,6 +1,11 @@
 // Para agregar un producto, guarda su imagen en assets/Productos y añade un objeto al arreglo.
 const productos = [
   {
+    nombre: "Portaretrato de madera",
+    imagen: "assets/Productos/tomi.png",
+    descripcion: "Portarretrato de madera para fotos",
+  },
+  {
     nombre: "Mr DOOM",
     imagen: "assets/Productos/D1.png",
     descripcion: "Llavero verde con máscara y letras DOOM",
@@ -83,6 +88,38 @@ const productos = [
 const catalogo = document.getElementById("catalogo-productos");
 
 if (catalogo) {
+  const ventana = document.createElement("dialog");
+  ventana.className = "producto-modal";
+  ventana.setAttribute("aria-labelledby", "producto-modal-titulo");
+
+  const cerrar = document.createElement("button");
+  cerrar.type = "button";
+  cerrar.className = "producto-modal-cerrar";
+  cerrar.setAttribute("aria-label", "Cerrar vista del producto");
+  cerrar.textContent = "×";
+
+  const imagenGrande = document.createElement("img");
+  const titulo = document.createElement("h2");
+  titulo.id = "producto-modal-titulo";
+  ventana.append(cerrar, imagenGrande, titulo);
+  document.body.append(ventana);
+
+  cerrar.addEventListener("click", () => ventana.close());
+  ventana.addEventListener("click", (evento) => {
+    const limites = ventana.getBoundingClientRect();
+    if (
+      evento.target === ventana &&
+      (evento.clientX < limites.left ||
+        evento.clientX > limites.right ||
+        evento.clientY < limites.top ||
+        evento.clientY > limites.bottom)
+    )
+      ventana.close();
+  });
+  ventana.addEventListener("close", () => {
+    document.body.classList.remove("producto-modal-abierto");
+  });
+
   const tarjetas = productos.map((producto) => {
     const tarjeta = document.createElement("figure");
     tarjeta.className = "catalog-card";
@@ -96,7 +133,23 @@ if (catalogo) {
     const nombre = document.createElement("figcaption");
     nombre.textContent = producto.nombre;
 
-    tarjeta.append(imagen, nombre);
+    const abrir = document.createElement("button");
+    abrir.type = "button";
+    abrir.className = "producto-abrir";
+    abrir.setAttribute("aria-label", `Ver ${producto.nombre} en grande`);
+    abrir.setAttribute("aria-haspopup", "dialog");
+    abrir.append(imagen);
+    abrir.addEventListener("click", () => {
+      imagenGrande.src = producto.imagen;
+      imagenGrande.alt = producto.descripcion;
+      titulo.textContent = producto.nombre;
+      ventana.showModal();
+      document.body.classList.add("producto-modal-abierto");
+    });
+    tarjeta.append(abrir, nombre);
+    tarjeta.addEventListener("click", (evento) => {
+      if (!abrir.contains(evento.target)) abrir.click();
+    });
     return tarjeta;
   });
 
